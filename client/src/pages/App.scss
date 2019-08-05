@@ -1,0 +1,20 @@
+* {
+  outline: none;
+  box-sizing: border-box;
+}
+
+.app-container {
+  text-align: center;
+
+  .screenshot-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    input {
+      width: 200px;
+      margin-right: 3px;
+    }
+  }
+}
