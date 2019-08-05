@@ -2,11 +2,10 @@ const { Server } = require('http');
 const { SubscriptionServer } = require('subscriptions-transport-ws');
 const { execute, subscribe } = require('graphql');
 const express = require('express');
-const bodyParser = require('body-parser');
 const cors = require('cors');
 
 // Bring in GraphQL-Express Middleware
-const { graphiqlExpress, graphqlExpress } = require('apollo-server-express');
+const { graphiqlExpress } = require('apollo-server-express');
 const { makeExecutableSchema } = require('graphql-tools');
 
 const { typeDefs } = require('./schema');
@@ -29,9 +28,6 @@ app.use(cors(corsOptions));
 
 // Create GraphiQL application
 app.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }));
-
-// Connect schemas with GraphQL
-// app.use('/graphql', bodyParser.json(), graphqlExpress(() => ({ schema })));
 
 // Making plain HTTP server for Websocket usage
 const server = Server(app);

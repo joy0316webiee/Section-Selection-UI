@@ -8,6 +8,18 @@ export interface AppState {
   coordinates: SectionBox;
 }
 
+export interface AppMutationData {
+  urlBoxSelection: {
+    error: boolean;
+    message: string;
+  };
+}
+
+export interface AppMutationVariables {
+  url: string;
+  coordinates: SectionBox;
+}
+
 export interface BaseMutationResponse {
   error: boolean;
   message: string;
@@ -48,16 +60,4 @@ export interface CanvasScreenQueryData {
 
 export interface CanvasScreenQueryVariables {
   url: string;
-}
-
-export interface AppMutationData {
-  urlBoxSelection: {
-    error: boolean;
-    message: string;
-  };
-}
-
-export interface AppMutationVariables {
-  url: string;
-  coordinates: SectionBox;
 }
